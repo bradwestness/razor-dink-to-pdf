@@ -7,6 +7,7 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageProjectUrl>https://github.com/bradwestness/razor-dink-to-pdf/</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Copyright>2023 Brad Westness</Copyright>
 		<PackageTags>dinktopdf wkhtmltopdf pdf generation generate razor view template</PackageTags>
 		<Description>

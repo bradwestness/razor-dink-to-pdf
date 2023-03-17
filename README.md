@@ -20,9 +20,9 @@ Return a PDF from an ASP.NET Controller Action just like how you would normally 
 ```csharp
 public sealed class UserController : Controller
 {
-  public Task<FileContentResult> PrintReport(int userId)
+  public async Task<FileContentResult> PrintReport(int userId)
   {
-	var model = this.userService.GetById(userId);
+	var model = await this.userService.GetByIdAsync(userId);
 	return this.RazorPdf(
 		model,
 		downloadFileName: "user_report.pdf",
