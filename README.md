@@ -15,18 +15,23 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Return a PDF from an ASP.NET Controller Action just like how you would normally return a view result:
+Return a PDF from an ASP.NET Controller Action just like you would normally return a view result:
 
 ```csharp
 public sealed class UserController : Controller
 {
-  public async Task<FileContentResult> PrintReport(int userId)
-  {
-	var model = await this.userService.GetByIdAsync(userId);
-	return this.RazorPdf(
-		model,
-		downloadFileName: "user_report.pdf",
-		lastModified: DateTimeOffset.UtcNow);
-  }
+	public async Task<FileContentResult> PrintReport(
+		int userId
+		[FromServices] IUserService userService)
+	{
+		var model = await userService.GetReportDataAsync(userId);
+
+		// Renders the Razor view at ~/Views/User/PrintReport.cshtml (by default),
+		// then generates a PDF from the HTML, and returns the PDF as a FileContentResult
+		return this.RazorPdf(
+			model,
+			downloadFileName: "user_report.pdf",
+			lastModified: DateTimeOffset.UtcNow);
+	}
 }
 ```
