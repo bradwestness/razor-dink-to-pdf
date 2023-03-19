@@ -1,10 +1,10 @@
 # razor-dink-to-pdf
 
-Wrapper for DinkToPDF that enables creating PDFs via Razor views.
+Wrapper for [DinkToPDF](https://github.com/rdvojmoc/DinkToPdf) that enables creating PDFs via Razor views.
 
 ## Usage
 
-Register the RazorPdfGeneration in your dependency registration at app start:
+Register the RazorPdfGeneration services in your dependency registration at app start:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
