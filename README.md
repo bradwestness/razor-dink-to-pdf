@@ -20,6 +20,7 @@ Return a PDF from an ASP.NET Controller Action just like you would normally retu
 ```csharp
 public sealed class UserController : Controller
 {
+	[HttpGet]
 	public async Task<FileContentResult> PrintReport(
 		int userId
 		[FromServices] IUserService userService)
