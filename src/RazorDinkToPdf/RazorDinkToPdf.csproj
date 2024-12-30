@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageProjectUrl>https://github.com/bradwestness/razor-dink-to-pdf/</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Copyright>2023 Brad Westness</Copyright>
+		<Copyright>2024 Brad Westness</Copyright>
 		<PackageTags>dinktopdf wkhtmltopdf pdf generation generate razor view template</PackageTags>
 		<Description>
 			Generate PDFs from Razor View templates using WKHtmlToPDF via the DinkToPdf library.
@@ -17,12 +17,16 @@
 		<PackageId>RazorDinkToPdf</PackageId>
 		<RepositoryUrl>https://github.com/bradwestness/razor-dink-to-pdf/</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.1</Version>
-		<AssemblyVersion>1.0.1.0</AssemblyVersion>
-		<FileVersion>1.0.1.0</FileVersion>
-		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<Version>2.0.0</Version>
+		<AssemblyVersion>2.0.0.0</AssemblyVersion>
+		<FileVersion>2.0.0.0</FileVersion>
+		<PackageReleaseNotes>Update to Microsoft AspNetCore App framework reference</PackageReleaseNotes>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
@@ -41,7 +45,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
@@ -55,7 +59,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="DinkToPdf" Version="1.0.8" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
 	</ItemGroup>
 
 </Project>
